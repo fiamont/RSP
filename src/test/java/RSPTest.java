@@ -9,15 +9,13 @@ public class RSPTest {
     public void afterTheEach () {
         System.out.println("the test ends");
     }
+
     @Test
-    @DisplayName("test 1")
-    public void whenThereISTwoInputsNoExceptionIsThrown (){
-        RSP.playRSP(1, 2);
-        Assertions.assertTrue(true);
+    @DisplayName("Is there a valid rock input from the player")
+
+    public void playerRockInputIsValid () {
+
+        Assertions.assertEquals("rock",RSP.playersInput());
     }
-    @Test
-    @DisplayName("test 2")
-    public void whenTheInputsAreEqualThenThereIsADraw () {
-        //Assertions.assertEquals(2, RSP.playRSP(1,1));
-    }
+
 }
