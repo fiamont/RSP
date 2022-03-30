@@ -14,17 +14,19 @@ public class RSP {
 
         //String playersInput = scanner.nextLine();
 
-        String playersInput = "  hej ";
+        String playersInput = "lizard";
 
 
-        if(playersInput.toLowerCase().trim() !="rock"){
-            System.out.println("Write \"rock\" ");
+        if(playersInput.toLowerCase().trim().equals("rock") || playersInput.toLowerCase().trim().equals("scissor") || playersInput.toLowerCase().trim().equals("paper") ){
+
+            return playersInput.toLowerCase().trim();
+        } else {
+            System.out.println("Write \"rock\" or \"scissor\" or \"paper\" ");
             playersInput = "rock";
-
             return playersInput.toLowerCase().trim();
         }
 
-        return playersInput.toLowerCase().trim();
+
     }
 
 }
