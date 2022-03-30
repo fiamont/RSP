@@ -25,8 +25,20 @@ public class RSP {
             playersInput = "rock";
             return playersInput.toLowerCase().trim();
         }
+    }
 
+    public static String computersInput () {
+        return "hej";
+        int computerInput = (int)(Math.random()*3 +1);
 
+        int hej = 2;
+        if(computerInput==1){
+            return "rock";
+        }else if(computerInput==2){
+            return "scissor";
+        }else if(computerInput==3){
+            return "paper";
+        }
     }
 
 }

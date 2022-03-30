@@ -22,7 +22,18 @@ public class RSPTest {
         } else {
             Assertions.assertTrue(false);
         }
-
-
     }
+
+    @Test
+    @DisplayName("Is there a valid input from computer")
+
+    public void computerInputIsValid () {
+        if (RSP.computersInput().equals("rock") || RSP.computersInput().equals("scissors") || RSP.computersInput().equals("paper")) {
+            boolean input = true;
+            Assertions.assertTrue(input);
+        } else {
+            Assertions.assertTrue(false);
+        }
+    }
+
 }
