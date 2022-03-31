@@ -23,6 +23,12 @@ public class RSPTest {
         Assertions.assertEquals("draw", RSP.gameOutcome("rock", "rock"));
     }
 
+    @Test
+    @DisplayName("Testing the playRSP method")
+    public void testPlayRSPMethod (){
+        RSP.playRSP(RSP.gameOutcome((RSP.player()),(RSP.player())));
+    }
+
     @RepeatedTest(4)
     @DisplayName("Does random work as it should")
     public void maybePlayAgain () {
