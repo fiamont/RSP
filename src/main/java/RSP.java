@@ -2,9 +2,21 @@ import java.util.Random;
 
 public class RSP {
 
-    public static void playRSP(String a, String b) {
+    public static void playRSP (){
         System.out.println("Hej");
 
+    }
+    public static String gameOutcome (String player1, String player2) {
+
+        if (player1.equals("rock") && player2.equals("scissor") || player1.equals("scissor") && player2.equals("paper")) {
+            return "player 1 wins";
+        }
+        else if (player2.equals("rock") && player1.equals("scissor") || player2.equals("scissor") && player1.equals("paper")) {
+            return "player 2 wins";
+        }
+        else {
+            return "draw";
+        }
     }
 
     public static String player () {
@@ -22,16 +34,4 @@ public class RSP {
             return "";
         }
     }
-/*public static String playersInput () {
-        String playersInput = "lizard";
-
-        if(playersInput.toLowerCase().trim().equals("rock") || playersInput.toLowerCase().trim().equals("scissor") || playersInput.toLowerCase().trim().equals("paper") ){
-
-            return playersInput.toLowerCase().trim();
-        } else {
-            System.out.println("Write \"rock\" or \"scissor\" or \"paper\" ");
-            playersInput = "rock";
-            return playersInput.toLowerCase().trim();
-        }
-    }*/
 }
