@@ -1,4 +1,5 @@
 import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 
 public class RSP {
@@ -28,16 +29,17 @@ public class RSP {
     }
 
     public static String computersInput () {
-        return "hej";
-        int computerInput = (int)(Math.random()*3 +1);
+        Random random = new Random();
+        int computerInput = random.nextInt(3)+1;
 
-        int hej = 2;
         if(computerInput==1){
             return "rock";
         }else if(computerInput==2){
             return "scissor";
         }else if(computerInput==3){
             return "paper";
+        }else {
+            return "";
         }
     }
 

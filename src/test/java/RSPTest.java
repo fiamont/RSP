@@ -15,25 +15,14 @@ public class RSPTest {
     @DisplayName("Is there a valid input from the player")
 
     public void playerInputIsValid() {
-
-        if (RSP.playersInput().equals("rock") || RSP.playersInput().equals("scissors") || RSP.playersInput().equals("paper")) {
-            boolean input = true;
-            Assertions.assertTrue(input);
-        } else {
-            Assertions.assertTrue(false);
-        }
+        Assertions.assertTrue(RSP.playersInput().equals("rock") || RSP.playersInput().equals("scissors") || RSP.playersInput().equals("paper"));
     }
 
-    @Test
+    @RepeatedTest(8)
     @DisplayName("Is there a valid input from computer")
 
     public void computerInputIsValid () {
-        if (RSP.computersInput().equals("rock") || RSP.computersInput().equals("scissors") || RSP.computersInput().equals("paper")) {
-            boolean input = true;
-            Assertions.assertTrue(input);
-        } else {
-            Assertions.assertTrue(false);
-        }
+        Assertions.assertTrue(RSP.computersInput().equals("rock") || RSP.computersInput().equals("scissors") || RSP.computersInput().equals("paper"));
     }
 
 }
