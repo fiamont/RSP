@@ -27,7 +27,13 @@ public class RSPTest {
     @DisplayName("Does random work as it should")
     public void maybePlayAgain () {
         int value = RSP.playMoreChoice();
-        Assertions.assertTrue(value==1 || value==2);
+        Assertions.assertTrue(value==1 || value==2 || value==3);
 
+    }
+    @Test
+    @DisplayName("Play until player one wins")
+    public void playUntilWin () {
+        int numberOfRepeat = RSP.playRSPUntilWin();
+        Assertions.assertEquals(numberOfRepeat,RSP.playRSPUntilWin());
     }
 }

@@ -3,8 +3,10 @@ import java.util.Random;
 public class RSP {
 
     public static void main(String[] args) {
-        playRSP();
-        playMore();
+        //playRSP();
+        //playMore();
+        playRSPUntilWin();
+        System.out.println("You played: " + playRSPUntilWin() + " times!");
     }
 
     public static void playRSP() {
@@ -18,27 +20,43 @@ public class RSP {
 
     public static void playMore () {
         while (true) {
-            System.out.println("\nDo you want to play again? 2 for yes 1 for no: \n");
+            System.out.println("\nDo you want to play again? Press 1\nDo you want to play until Player1 wins? Press 2 \nExit, press 3\n");
             int choice = playMoreChoice();
 
-            if (choice == 1) {
+            if (choice == 3) {
                 System.out.println("Ok, bye!");
                 break;
-            }else{
+            }else if (choice == 1){
                 playRSP();
+            }
+            else {
+                playRSPUntilWin();
+                System.out.println("You played: " + playRSPUntilWin() + " times!");
+                break;
+
             }
         }
     }
+    public static int playRSPUntilWin () {
+        int count = 1;
+        while (true){
+            System.out.println("\nLets play Rock, scissor, paper! \n");
+            String player1 = player();
+            System.out.println("Player 1 chose: " + player1);
+            String player2 = player();
+            System.out.println("Player 2 chose: " + player2);
+            System.out.println(gameOutcome(player1, player2));
+            count++;
+            if (gameOutcome(player1,player2).equals("player 1 wins")){
+                break;
+            }
+        }return count;
+
+    }
+
     public static int playMoreChoice () {
         Random random = new Random();
-        int choice = random.nextInt(2) + 1;
-        if(choice==1){
-            return 1;
-        }else if(choice==2){
-            return 2;
-        }else {
-            return 0;
-        }
+        return random.nextInt(3) + 1;
     }
 
     public static String gameOutcome (String player1, String player2) {
