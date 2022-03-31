@@ -31,14 +31,15 @@ public class RSP {
     public static String computersInput () {
         Random random = new Random();
         int computerInput = random.nextInt(3)+1;
-
+    System.out.println(computerInput);
         if(computerInput==1){
             return "rock";
         }else if(computerInput==2){
             return "scissor";
-        }else if(computerInput==3){
+        }else if (computerInput==3){
             return "paper";
-        }else {
+        }
+        else {
             return "";
         }
     }
