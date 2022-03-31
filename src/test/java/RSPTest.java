@@ -11,18 +11,18 @@ public class RSPTest {
         System.out.println("the test ends");
     }
 
-    @Test
+   /* @Test
     @DisplayName("Is there a valid input from the player")
 
     public void playerInputIsValid() {
         Assertions.assertTrue(RSP.playersInput().equals("rock") || RSP.playersInput().equals("scissor") || RSP.playersInput().equals("paper"));
-    }
+    }*/
 
     @RepeatedTest(8)
     @DisplayName("Is there a valid input from computer")
 
-    public void computerInputIsValid () {
-        String value = RSP.computersInput();
+    public void playerInputIsValid () {
+        String value = RSP.player();
         Assertions.assertTrue(value.equals("rock") || value.equals("scissor") || value.equals("paper"));
     }
     /*@Test

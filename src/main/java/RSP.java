@@ -1,6 +1,4 @@
-import java.util.Locale;
 import java.util.Random;
-import java.util.Scanner;
 
 public class RSP {
 
@@ -9,14 +7,23 @@ public class RSP {
 
     }
 
-    public static String playersInput () {
-
-        //Scanner scanner = new Scanner(System.in);
-
-        //String playersInput = scanner.nextLine();
-
+    public static String player () {
+        Random random = new Random();
+        int playerInput = random.nextInt(3)+1;
+        System.out.println(playerInput);
+        if(playerInput==1){
+            return "rock";
+        }else if(playerInput==2){
+            return "scissor";
+        }else if (playerInput==3){
+            return "paper";
+        }
+        else {
+            return "";
+        }
+    }
+/*public static String playersInput () {
         String playersInput = "lizard";
-
 
         if(playersInput.toLowerCase().trim().equals("rock") || playersInput.toLowerCase().trim().equals("scissor") || playersInput.toLowerCase().trim().equals("paper") ){
 
@@ -26,22 +33,5 @@ public class RSP {
             playersInput = "rock";
             return playersInput.toLowerCase().trim();
         }
-    }
-
-    public static String computersInput () {
-        Random random = new Random();
-        int computerInput = random.nextInt(3)+1;
-    System.out.println(computerInput);
-        if(computerInput==1){
-            return "rock";
-        }else if(computerInput==2){
-            return "scissor";
-        }else if (computerInput==3){
-            return "paper";
-        }
-        else {
-            return "";
-        }
-    }
-
+    }*/
 }
