@@ -22,4 +22,12 @@ public class RSPTest {
     public void gameOutcomeReturn () {
         Assertions.assertEquals("draw", RSP.gameOutcome("rock", "rock"));
     }
+
+    @RepeatedTest(4)
+    @DisplayName("Does random work as it should")
+    public void maybePlayAgain () {
+        int value = RSP.playMoreChoice();
+        Assertions.assertTrue(value==1 || value==2);
+
+    }
 }
