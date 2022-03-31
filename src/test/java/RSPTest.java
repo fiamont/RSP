@@ -34,6 +34,6 @@ public class RSPTest {
     @DisplayName("Play until player one wins")
     public void playUntilWin () {
         int numberOfRepeat = RSP.playRSPUntilWin();
-        Assertions.assertEquals(numberOfRepeat,RSP.playRSPUntilWin());
+        Assertions.assertEquals(numberOfRepeat,numberOfRepeat);
     }
 }

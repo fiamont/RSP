@@ -4,18 +4,19 @@ public class RSP {
 
     public static void main(String[] args) {
         //playRSP();
-        //playMore();
-        playRSPUntilWin();
-        System.out.println("You played: " + playRSPUntilWin() + " times!");
+        playMore();
+        //playRSPUntilWin();
+        //System.out.println("You played: " + playRSPUntilWin() + " time/s!");
     }
 
-    public static void playRSP() {
+    public static void playRSP(String outcome) {
         System.out.println("Lets play Rock, scissor, paper! \n");
         String player1 = player();
         System.out.println("Player 1 chose: " + player1);
         String player2 = player();
         System.out.println("Player 2 chose: " + player2);
-        System.out.println(gameOutcome(player1, player2));
+        outcome = gameOutcome(player1,player2);
+        System.out.println(outcome);
     }
 
     public static void playMore () {
@@ -27,7 +28,7 @@ public class RSP {
                 System.out.println("Ok, bye!");
                 break;
             }else if (choice == 1){
-                playRSP();
+                playRSP(gameOutcome(player(),player()));
             }
             else {
                 playRSPUntilWin();
@@ -38,20 +39,16 @@ public class RSP {
         }
     }
     public static int playRSPUntilWin () {
-        int count = 1;
+        int count = 0;
         while (true){
-            System.out.println("\nLets play Rock, scissor, paper! \n");
-            String player1 = player();
-            System.out.println("Player 1 chose: " + player1);
-            String player2 = player();
-            System.out.println("Player 2 chose: " + player2);
-            System.out.println(gameOutcome(player1, player2));
+            playRSP((gameOutcome(player(),player())));
             count++;
-            if (gameOutcome(player1,player2).equals("player 1 wins")){
+            System.out.println(count);
+            if ((gameOutcome(player(),player())).equals("player 1 wins")){
                 break;
             }
-        }return count;
-
+        }
+        return count;
     }
 
     public static int playMoreChoice () {
