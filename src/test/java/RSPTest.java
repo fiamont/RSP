@@ -30,16 +30,11 @@ public class RSPTest {
         Assertions.assertTrue(value==1 || value==2 || value==3);
 
     }
-    @Test
-    @DisplayName("Play until player one wins")
-    public void playUntilWin () {
-        int numberOfRepeat = RSP.playRSPUntilWin();
-        Assertions.assertEquals(numberOfRepeat,numberOfRepeat);
-    }
-
-    @Test
-    @DisplayName("Testing the playRSP method")
-    public void testPlayRSPMethod (){
-        RSP.playRSP(RSP.gameOutcome((RSP.player()),"amanda"));
+    @RepeatedTest(100)
+    @DisplayName("Play until player one wins or max 15 times")
+    public void playUntilWinMax15Times () throws Exception {
+        if(RSP.playRSPUntilWin()>=15){
+            throw new Exception("You should have won by now...");
+        }
     }
 }

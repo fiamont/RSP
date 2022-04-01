@@ -45,20 +45,27 @@ public class RSP {
         return outcome;
     }
 
-    public static int playRSPUntilWin () {
+    public static int playRSPUntilWin () throws Exception{
         int count = 0;
-        while (true){
+        boolean playerVictory = false;
+        while (playerVictory == false){
             String outcome = playRSP((gameOutcome(player(),player())));
             count++;
+            System.out.println(outcome);
             System.out.println(count);
             if (outcome.equals("player 1 wins")){
-                break;
+                playerVictory = true;
+
+                if(count>=20){
+                    throw new Exception("You should have won by now...");
+                }
             }
         }
         return count;
+
     }
 
-    public static void playMore () {
+    public static void playMore () throws Exception{
         while (true) {
             System.out.println("\nDo you want to play again? Press 1\nDo you want to play until Player1 wins? Press 2 \nExit, press 3\n");
             int choice = playMoreChoice();
