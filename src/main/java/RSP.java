@@ -2,13 +2,6 @@ import java.util.Random;
 
 public class RSP {
 
-    public static void main(String[] args) {
-        //playRSP();
-        playMore();
-        //playRSPUntilWin();
-        //System.out.println("You played: " + playRSPUntilWin() + " time/s!");
-    }
-
     public static void playRSP(String outcome) {
         System.out.println("Lets play Rock, scissor, paper! \n");
         String player1 = player();
