@@ -40,6 +40,6 @@ public class RSPTest {
     @Test
     @DisplayName("Testing the playRSP method")
     public void testPlayRSPMethod (){
-        RSP.playRSP(RSP.gameOutcome((RSP.player()),(RSP.player())));
+        RSP.playRSP(RSP.gameOutcome((RSP.player()),"amanda"));
     }
 }

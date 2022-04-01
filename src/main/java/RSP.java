@@ -35,23 +35,23 @@ public class RSP {
         return random.nextInt(3) + 1;
     }
 
-    public static void playRSP(String outcome) {
+    public static String playRSP(String outcome) {
         System.out.println("Lets play Rock, scissor, paper! \n");
         String player1 = player();
         System.out.println("Player 1 chose: " + player1);
         String player2 = player();
         System.out.println("Player 2 chose: " + player2);
         outcome = gameOutcome(player1,player2);
-        System.out.println(outcome);
+        return outcome;
     }
 
     public static int playRSPUntilWin () {
         int count = 0;
         while (true){
-            playRSP((gameOutcome(player(),player())));
+            String outcome = playRSP((gameOutcome(player(),player())));
             count++;
             System.out.println(count);
-            if ((gameOutcome(player(),player())).equals("player 1 wins")){
+            if (outcome.equals("player 1 wins")){
                 break;
             }
         }
